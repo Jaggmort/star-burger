@@ -15,7 +15,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env.bool('DEBUG', False)
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', '127.0.0.1')
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', 'localhost')
+#ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'foodcartapp.apps.FoodcartappConfig',
@@ -90,7 +91,6 @@ DATABASES = {
         conn_health_checks=True,
     ),
 }
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
