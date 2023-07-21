@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'phonenumber_field',
     'rest_framework',
-    'django_dump_load_utf8',
 ]
 
 MIDDLEWARE = [
@@ -129,11 +128,11 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "bundles"),
 ]
 
-YANDEX_GEO_APIKEY = env('YANDEX_GEO_APIKEY')
+YANDEX_GEO_APIKEY = env('YANDEX_GEO_APIKEY', 'test')
 
 ROLLBAR = {
-    'access_token': env('ROLLBAR_ACCESS_TOKEN'),
-    'environment': env('ENVIROMENT'),
+    'access_token': env('ROLLBAR_ACCESS_TOKEN', 'test'),
+    'environment': env('ENVIROMENT', 'dev'),
     'code_version': '1.0',
     'branch': 'master',
     'root': BASE_DIR,
