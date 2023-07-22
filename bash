@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 cd /opt/starburger/
-#git pull git@github.com:Jaggmort/star-burger.git master
+git pull git@github.com:Jaggmort/star-burger.git master
 python3 -m venv .venv
 sudo apt update
 sudo apt install nodejs
