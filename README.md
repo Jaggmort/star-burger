@@ -150,7 +150,9 @@ Parcel будет следить за файлами в каталоге `bundle
 - `YANDEX_GEO_APIKEY` - ключ от API Яндекс-геокодера [информация](https://dvmn.org/encyclopedia/api-docs/yandex-geocoder-api/).
 - `ROLLBAR_ACCESS_TOKEN` - токен ROLLBAR для мониторинга [инструкция](https://docs.openreplay.com/en/integrations/rollbar/)
 - `ENVIROMENT` - наименование окружения текущей инсталляции сайта.
-  
+
+Пример работающего сайта можно найти по [адресу](https://jaggmort.ru/)
+
 ## Цели проекта
 
 Код написан в учебных целях — это урок в курсе по Python и веб-разработке на сайте [Devman](https://dvmn.org). За основу был взят код проекта [FoodCart](https://github.com/Saibharath79/FoodCart).
