@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 cd /opt/starburger/
-git pull git@github.com:Jaggmort/star-burger.git master
+#git pull git@github.com:Jaggmort/star-burger.git master
 python3 -m venv .venv
 sudo apt update
 sudo apt install nodejs
@@ -15,7 +15,7 @@ source .venv/bin/activate
 #python -c 'from django.core.management.utils import get_random_secret_key; fobj=open(".env", "w"); fobj.write("SECRET_KEY="get_random_secret_key());fobj.close()'
 pip install -r requirements.txt
 python manage.py migrate
-python manage.py collectstatic
+echo yes | python manage.py collectstatic
 deactivate
 systemctl reload nginx
 systemctl restart starburger
