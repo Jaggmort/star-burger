@@ -10,9 +10,8 @@ sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
 sudo /sbin/mkswap /var/swap.1
 sudo /sbin/swapon /var/swap.1
 npm ci --dev
-#./node_modules/.bin/parcel watch bundles-src/index.js --dist-dir bundles --public-url="./"
+./node_modules/.bin/parcel bundles-src/index.js --dist-dir bundles --public-url="./"
 source .venv/bin/activate
-#python -c 'from django.core.management.utils import get_random_secret_key; fobj=open(".env", "w"); fobj.write("SECRET_KEY="get_random_secret_key());fobj.close()'
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py collectstatic
