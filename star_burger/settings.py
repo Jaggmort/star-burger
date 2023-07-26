@@ -16,7 +16,6 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env.bool('DEBUG', False)
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', 'localhost')
-#ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'foodcartapp.apps.FoodcartappConfig',
