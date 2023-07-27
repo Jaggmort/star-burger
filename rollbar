@@ -1,5 +1,0 @@
-curl https://api.rollbar.com/api/1/deploy/ \
-  -F access_token=$ROLLBAR_ACCESS_TOKEN \
-  -F environment=$ENVIROMENT  \
-  -F revision=$(git rev-parse --verify HEAD) \
-  -F local_username='Jaggmort'

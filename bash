@@ -3,9 +3,6 @@ set -Eeuo pipefail
 cd /opt/starburger/
 git pull git@github.com:Jaggmort/star-burger.git master
 python3 -m venv .venv
-sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
-sudo /sbin/mkswap /var/swap.1
-sudo /sbin/swapon /var/swap.1
 npm ci --dev
 ./node_modules/.bin/parcel bundles-src/index.js --dist-dir bundles --public-url="./"
 source .venv/bin/activate
