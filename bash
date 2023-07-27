@@ -11,7 +11,7 @@ npm ci --dev
 source .venv/bin/activate
 pip install -r requirements.txt
 python manage.py migrate
-echo yes | python manage.py collectstatic
+python manage.py collectstatic --noinput
 deactivate
 systemctl reload nginx
 systemctl restart starburger
