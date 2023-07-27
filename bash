@@ -15,6 +15,9 @@ python manage.py collectstatic --noinput
 deactivate
 systemctl reload nginx
 systemctl restart starburger
-source .venv/bin/activate
-python -c "from environs import Env; env = Env(); env.read_env(); import subprocess; subprocess.run(['/opt/starburger/rollbar', ''], shell=True)"
-deactivate
+set -o allexport && source .evn && set +o allexport
+curl https://api.rollbar.com/api/1/deploy/ \
+  -F access_token=$ROLLBAR_ACCESS_TOKEN \
+  -F environment=$ENVIROMENT  \
+  -F revision=$(git rev-parse --verify HEAD) \
+  -F local_username='Jaggmort'
