@@ -12,7 +12,7 @@ python manage.py collectstatic --noinput
 deactivate
 systemctl reload nginx
 systemctl restart starburger
-set -o allexport && source .evn && set +o allexport
+set -o allexport && source .env && set +o allexport
 curl https://api.rollbar.com/api/1/deploy/ \
   -F access_token=$ROLLBAR_ACCESS_TOKEN \
   -F environment=$ENVIROMENT  \
