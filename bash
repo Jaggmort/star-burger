@@ -7,7 +7,7 @@ npm ci --dev
 ./node_modules/.bin/parcel bundles-src/index.js --dist-dir bundles --public-url="./"
 source .venv/bin/activate
 pip install -r requirements.txt
-python manage.py migrate
+python manage.py migrate --noinput
 python manage.py collectstatic --noinput
 deactivate
 systemctl reload nginx
