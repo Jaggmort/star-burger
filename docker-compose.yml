@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    env_file: .env
+
+  django:
+    build: 
+       context: .
+       dockerfile: Dockerfile.prod
+    command: gunicorn -b 0.0.0.0:8000 --workers 3 star_burger.wsgi:application
+    environment:
+      - POSTGRES_HOST=db
+    volumes:
+      - .:/app
+      - frontend:/app/frontend
+      - media:/app/media
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+     - ./nginx:/etc/nginx/templates
+     - ./nginx/letsencrypt:/etc/letsencrypt
+     - frontend:/app/frontend
+     - media:/app/media
+    ports:
+     - "80:80"
+     - "443:443"
+    depends_on:
+      - django
+
+volumes:
+  postgres:
+  frontend:
+  media:

@@ -1,0 +1,10 @@
+node_modules
+.venv
+staticfiles
+first_deploy_star_burger.sh
+deploy_star_burger.sh
+docker-compose.prod.yml
+.dockerignore
+.gitignore
+.git
+README.md
