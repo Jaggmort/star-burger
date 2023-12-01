@@ -161,10 +161,13 @@ Cоздать файл `.env` в каталоге `star_burger/` со следу
 - `YANDEX_GEO_APIKEY` - ключ от API Яндекс-геокодера [информация](https://dvmn.org/encyclopedia/api-docs/yandex-geocoder-api/).
 - `ROLLBAR_ACCESS_TOKEN` - токен ROLLBAR для мониторинга [инструкция](https://docs.openreplay.com/en/integrations/rollbar/)
 - `ENVIROMENT` - наименование окружения текущей инсталляции сайта.
-- `DJURL ` - connection string (пр: postgres://user:password@localhost:5432/postgres).
-- `POSTGRES_PASSWORD` - Пароль пользователя базы данных (в постгрес по умолчанию postgres).
-- `POSTGRES_USER` - Пользователь базы данных (в постгрес по умолчанию postgres).
-- `POSTGRES_DB` - Имя базы данных.
+- `SQL_PASSWORD` - Пароль пользователя базы данных (в постгрес по умолчанию postgres).
+- `SQL_USER` - Пользователь базы данных (в постгрес по умолчанию postgres).
+- `SQL_DATABASE` - Имя базы данных.
+- `SQL_ENGINE` - django.db.backends.postgresql.
+- `SQL_HOST` - db.
+- `SQL_PORT` - 5432.
+- `DATABASE` - postgres.
 - `ALLOWED_HOSTS` - Список ип-адресов, на которых может находиться сайт.
 - `NGINX_HOST` - Домен, на котором находиться сайт.
 
