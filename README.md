@@ -151,8 +151,25 @@ Parcel будет следить за файлами в каталоге `bundle
 - `ROLLBAR_ACCESS_TOKEN` - токен ROLLBAR для мониторинга [инструкция](https://docs.openreplay.com/en/integrations/rollbar/)
 - `ENVIROMENT` - наименование окружения текущей инсталляции сайта.
 
-Пример работающего сайта можно найти по [адресу](https://jaggmort.ru/)
+# Для деплоя в виде docker compose (рекомендуется)
 
+Cоздать файл `.env` в каталоге `star_burger/` со следующими настройками:
+
+- `DEBUG` — дебаг-режим. Поставьте `False`.
+- `SECRET_KEY` — секретный ключ проекта. Он отвечает за шифрование на сайте. Например, им зашифрованы все пароли на вашем сайте.
+- `ALLOWED_HOSTS` — [см. документацию Django](https://docs.djangoproject.com/en/3.1/ref/settings/#allowed-hosts)
+- `YANDEX_GEO_APIKEY` - ключ от API Яндекс-геокодера [информация](https://dvmn.org/encyclopedia/api-docs/yandex-geocoder-api/).
+- `ROLLBAR_ACCESS_TOKEN` - токен ROLLBAR для мониторинга [инструкция](https://docs.openreplay.com/en/integrations/rollbar/)
+- `ENVIROMENT` - наименование окружения текущей инсталляции сайта.
+- `DJURL ` - connection string (пр: postgres://user:password@localhost:5432/postgres).
+- `POSTGRES_PASSWORD` - Пароль пользователя базы данных (в постгрес по умолчанию postgres).
+- `POSTGRES_USER` - Пользователь базы данных (в постгрес по умолчанию postgres).
+- `POSTGRES_DB` - Имя базы данных.
+- `ALLOWED_HOSTS` - Список ип-адресов, на которых может находиться сайт.
+- `NGINX_HOST` - Домен, на котором находиться сайт.
+
+### Пример работающего сайта можно найти по [адресу](https://jaggmort.ru/)
+  
 ## Цели проекта
 
 Код написан в учебных целях — это урок в курсе по Python и веб-разработке на сайте [Devman](https://dvmn.org). За основу был взят код проекта [FoodCart](https://github.com/Saibharath79/FoodCart).
