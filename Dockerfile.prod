@@ -17,7 +17,6 @@ RUN apt update  \
 COPY requirements.txt ./
 RUN pip install -r requirements.txt 
 COPY . .
-ENTRYPOINT ["/app/entrypoint.prod.sh"]
 RUN python manage.py collectstatic --noinput
 RUN mkdir -p frontend/ \
     && cp -R bundles/* frontend/  \
