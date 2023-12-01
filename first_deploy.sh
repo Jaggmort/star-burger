@@ -2,9 +2,10 @@
 set -e
 cd /opt/star-burger/
 systemctl stop nginx
-cp -a /etc/letsencrypt/ /opt/star-burger/ngingx/letsencrypt/
+mkdir -p nginx/letsencrypt/
+cp -a /etc/letsencrypt/ /opt/star-burger/nginx/
+chmod u+x entrypoint.prod.sh
 docker compose up -d --build
-docker compose exec django python manage.py migrate --noinput
-docker compose exec django python manage.py loaddata data.json
-docker compose exec django python manage.py collectstatic --no-input 
+sudo docker exec -i star-burger-django-1 python manage.py migrate --noiput
+sudo docker exec -i star-burger-django-1 python manage.py loaddata data.json
 printf "\nDeploy completed!\n"
